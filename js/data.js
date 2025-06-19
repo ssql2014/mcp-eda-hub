@@ -5,21 +5,22 @@ const mcpServers = [
         name: "AnySilicon Die Calculator",
         author: "AnySilicon",
         category: "Manufacturing",
-        description: "Calculate dies per wafer using the official AnySilicon formula. Supports standard wafer sizes and includes edge exclusion and scribe lane parameters.",
+        description: "Web scrapes the AnySilicon online calculator to compute dies per wafer. Provides accurate calculations through MCP interface using the latest AnySilicon calculation logic.",
         tags: ["die-per-wafer", "yield", "manufacturing", "wafer"],
-        githubUrl: "https://github.com/ssql2014/mcp4eda",
+        githubUrl: "https://github.com/ssql2014/mcp4eda/tree/main/anysilicon",
         installCommand: "git clone https://github.com/ssql2014/mcp4eda.git && cd mcp4eda/anysilicon && npm install && npm run build",
         config: {
             "anysilicon": {
                 "command": "node",
-                "args": ["/path/to/anysilicon/dist/index.js"]
+                "args": ["/path/to/mcp4eda/anysilicon/dist/index.js"]
             }
         },
         features: [
-            "Die per wafer calculation using AnySilicon formula",
-            "Standard wafer size support (150mm, 200mm, 300mm, 450mm)",
-            "Edge exclusion and scribe lane parameters",
-            "Parameter validation with helpful suggestions"
+            "Uses official AnySilicon online calculator via web scraping",
+            "Always provides latest calculation logic from AnySilicon",
+            "Supports 200mm and 300mm wafer sizes",
+            "Returns total dies, wafer area, and utilization percentage",
+            "No need to reverse-engineer calculation formulas"
         ],
         dateAdded: "2024-01-15"
     },
