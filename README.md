@@ -4,7 +4,9 @@ A curated directory of Model Context Protocol (MCP) servers specifically designe
 
 ## 🌐 Live Website
 
-Visit [MCP-EDA Hub](https://ssql2014.github.io/mcp4eda/mcp-eda-hub/) to explore available MCP servers for EDA.
+Visit [MCP-EDA Hub](https://www.mcp4eda.cn) to explore available MCP servers for EDA.
+
+Alternative URL: [https://ssql2014.github.io/mcp-eda-hub/](https://ssql2014.github.io/mcp-eda-hub/)
 
 ## 📋 Features
 
@@ -22,8 +24,8 @@ The website is a static site that can be hosted on GitHub Pages or any web serve
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/ssql2014/mcp4eda.git
-cd mcp4eda/mcp-eda-hub
+git clone https://github.com/ssql2014/mcp-eda-hub.git
+cd mcp-eda-hub
 ```
 
 2. Open `index.html` in your browser or use a local server:
@@ -109,7 +111,7 @@ MIT License - see the parent repository for details.
 
 - [Model Context Protocol Documentation](https://modelcontextprotocol.io)
 - [Claude Desktop](https://claude.ai/desktop)
-- [MCP-EDA Hub Live Site](https://ssql2014.github.io/mcp4eda/mcp-eda-hub/)
+- [MCP-EDA Hub Live Site](https://www.mcp4eda.cn)
 
 ## 💡 Future Plans
 
