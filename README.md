@@ -10,11 +10,17 @@ Alternative URL: [https://ssql2014.github.io/mcp-eda-hub/](https://ssql2014.gith
 
 ## 📋 Features
 
-- **Curated EDA MCP Servers**: Discover servers for simulation, synthesis, physical design, verification, and more
+- **Curated EDA MCP Servers**: Currently featuring implemented servers from the mcp4eda project
 - **Easy Search & Filter**: Find servers by category, tags, or keywords
 - **Quick Installation**: Copy-paste installation commands and Claude Desktop configurations
 - **Modern UI**: Clean, responsive design that works on all devices
 - **Open Source**: Community-driven directory for the EDA ecosystem
+
+## 🚨 Current Status
+
+The hub currently showcases two implemented MCP servers:
+- **AnySilicon Die Calculator**: Calculate dies per wafer for semiconductor manufacturing
+- **RTL Parser MCP**: Parse and analyze Verilog/SystemVerilog designs using Verible
 
 ## 🚀 Quick Start
 
