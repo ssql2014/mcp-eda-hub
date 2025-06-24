@@ -25,28 +25,31 @@ const mcpServers = [
         dateAdded: "2024-12-20"
     },
     {
-        id: "rtl-parser",
-        name: "RTL Parser MCP",
+        id: "verible-mcp",
+        name: "Verible MCP Server",
         author: "mcp4eda",
         category: "Design Entry",
-        description: "Parse and analyze Verilog/SystemVerilog designs using Google's Verible parser. Extract module hierarchy, ports, parameters, and design statistics.",
-        tags: ["verilog", "systemverilog", "rtl", "parser", "verible"],
-        githubUrl: "https://github.com/ssql2014/mcp4eda/tree/main/rtl-parser-mcp",
-        installCommand: "git clone https://github.com/ssql2014/mcp4eda.git && cd mcp4eda/rtl-parser-mcp && npm install && npm run build",
+        description: "Comprehensive SystemVerilog/Verilog tools suite via Verible. Provides linting, formatting, syntax analysis, register analysis, project analysis, and more through a single MCP interface.",
+        tags: ["verilog", "systemverilog", "verible", "lint", "format", "analysis", "rtl"],
+        githubUrl: "https://github.com/ssql2014/mcp4eda/tree/main/verible-mcp",
+        installCommand: "git clone https://github.com/ssql2014/mcp4eda.git && cd mcp4eda/verible-mcp && npm install && npm run build",
         config: {
-            "rtl-parser": {
+            "verible": {
                 "command": "node",
-                "args": ["/path/to/mcp4eda/rtl-parser-mcp/dist/index.js"]
+                "args": ["/path/to/mcp4eda/verible-mcp/dist/index.js"]
             }
         },
         features: [
-            "Parse Verilog/SystemVerilog files using Verible",
-            "Extract module hierarchy and dependencies",
-            "List ports, parameters, and signals",
-            "Generate design statistics and metrics",
-            "Support for multiple file analysis"
+            "Style linting with configurable rules and automatic fixing",
+            "Code formatting with customizable indentation and line length",
+            "Syntax parsing with AST visualization and JSON export",
+            "Register and module analysis with flip-flop detection",
+            "Project-level analysis with symbol tables and dependencies",
+            "Syntax-aware file comparison and code obfuscation",
+            "Natural language interface for all tools",
+            "Intelligent caching for improved performance"
         ],
-        dateAdded: "2024-12-22"
+        dateAdded: "2024-12-24"
     }
 ];
 
