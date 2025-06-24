@@ -58,12 +58,12 @@ const mcpServers = [
         category: "IP Management",
         description: "An intelligent agent for IP core and ASIC service procurement. Provides structured access to semiconductor industry B2B platforms for finding vendors, comparing services, and getting price estimations.",
         tags: ["ip-core", "asic", "procurement", "b2b", "supply-chain", "vendor-comparison"],
-        githubUrl: "https://github.com/ssql2014/semiconductor-supply-chain-mcp",
-        installCommand: "git clone https://github.com/ssql2014/semiconductor-supply-chain-mcp.git && cd semiconductor-supply-chain-mcp && npm install && npm run build",
+        githubUrl: "https://github.com/ssql2014/mcp4eda/tree/main/semiconductor-supply-chain-mcp",
+        installCommand: "git clone https://github.com/ssql2014/mcp4eda.git && cd mcp4eda/semiconductor-supply-chain-mcp && npm install && npm run build",
         config: {
             "semiconductor-supply-chain": {
                 "command": "node",
-                "args": ["/path/to/semiconductor-supply-chain-mcp/dist/index.js"]
+                "args": ["/path/to/mcp4eda/semiconductor-supply-chain-mcp/dist/index.js"]
             }
         },
         features: [
@@ -115,12 +115,12 @@ const mcpServers = [
         category: "Simulation",
         description: "An intelligent hardware verification tool that provides automatic testbench generation, smart simulation with dependency management, and natural language queries about simulations.",
         tags: ["verilator", "simulation", "verification", "testbench", "verilog", "systemverilog", "coverage", "waveform"],
-        githubUrl: "https://github.com/ssql2014/verilator-mcp",
-        installCommand: "git clone https://github.com/ssql2014/verilator-mcp.git && cd verilator-mcp && npm install && npm run build",
+        githubUrl: "https://github.com/ssql2014/mcp4eda/tree/main/verilator-mcp",
+        installCommand: "git clone https://github.com/ssql2014/mcp4eda.git && cd mcp4eda/verilator-mcp && npm install && npm run build",
         config: {
             "verilator": {
                 "command": "node",
-                "args": ["/path/to/verilator-mcp/dist/index.js"],
+                "args": ["/path/to/mcp4eda/verilator-mcp/dist/index.js"],
                 "env": {
                     "VERILATOR_PATH": "/usr/local/bin/verilator",
                     "LOG_LEVEL": "info"
