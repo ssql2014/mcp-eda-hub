@@ -50,6 +50,32 @@ const mcpServers = [
             "Intelligent caching for improved performance"
         ],
         dateAdded: "2024-12-24"
+    },
+    {
+        id: "semiconductor-supply-chain",
+        name: "Semiconductor Supply Chain MCP",
+        author: "ssql2014",
+        category: "IP Management",
+        description: "An intelligent agent for IP core and ASIC service procurement. Provides structured access to semiconductor industry B2B platforms for finding vendors, comparing services, and getting price estimations.",
+        tags: ["ip-core", "asic", "procurement", "b2b", "supply-chain", "vendor-comparison"],
+        githubUrl: "https://github.com/ssql2014/semiconductor-supply-chain-mcp",
+        installCommand: "git clone https://github.com/ssql2014/semiconductor-supply-chain-mcp.git && cd semiconductor-supply-chain-mcp && npm install && npm run build",
+        config: {
+            "semiconductor-supply-chain": {
+                "command": "node",
+                "args": ["/path/to/semiconductor-supply-chain-mcp/dist/index.js"]
+            }
+        },
+        features: [
+            "Find IP vendors by category, technology, and requirements",
+            "Locate ASIC design and manufacturing services",
+            "Get price estimations for semiconductor services",
+            "Compare multiple vendors with customizable criteria",
+            "Natural language queries for complex search requirements",
+            "Support for various technology nodes and foundries",
+            "Filter by power requirements and process nodes"
+        ],
+        dateAdded: "2025-01-24"
     }
 ];
 
