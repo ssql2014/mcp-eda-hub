@@ -76,6 +76,67 @@ const mcpServers = [
             "Filter by power requirements and process nodes"
         ],
         dateAdded: "2025-01-24"
+    },
+    {
+        id: "yosys-mcp",
+        name: "Yosys MCP Server",
+        author: "mcp4eda",
+        category: "Synthesis",
+        description: "A Model Context Protocol server providing Yosys synthesis and analysis capabilities for Verilog/SystemVerilog designs. Supports multiple FPGA/ASIC targets with visualization capabilities.",
+        tags: ["yosys", "synthesis", "verilog", "systemverilog", "fpga", "asic", "rtl", "netlist"],
+        githubUrl: "https://github.com/ssql2014/mcp4eda/tree/main/yosys-mcp",
+        installCommand: "git clone https://github.com/ssql2014/mcp4eda.git && cd mcp4eda/yosys-mcp && npm install && npm run build",
+        config: {
+            "yosys": {
+                "command": "node",
+                "args": ["/path/to/mcp4eda/yosys-mcp/dist/index.js"],
+                "env": {
+                    "YOSYS_PATH": "/usr/local/bin/yosys",
+                    "YOSYS_DEFAULT_TARGET": "generic",
+                    "YOSYS_OPT_LEVEL": "2"
+                }
+            }
+        },
+        features: [
+            "Synthesis to gate-level netlists for various targets (Xilinx, Intel/Altera, Lattice iCE40/ECP5)",
+            "Design statistics, hierarchy analysis, and resource estimation",
+            "Visual circuit diagrams generation using Graphviz",
+            "Intelligent result caching for improved performance",
+            "Support for optimization levels and custom synthesis flows",
+            "Multiple output formats: Verilog, JSON, BLIF, EDIF",
+            "Configurable technology mapping and optimization"
+        ],
+        dateAdded: "2025-01-24"
+    },
+    {
+        id: "verilator-mcp",
+        name: "Verilator MCP Server",
+        author: "mcp4eda",
+        category: "Simulation",
+        description: "An intelligent hardware verification tool that provides automatic testbench generation, smart simulation with dependency management, and natural language queries about simulations.",
+        tags: ["verilator", "simulation", "verification", "testbench", "verilog", "systemverilog", "coverage", "waveform"],
+        githubUrl: "https://github.com/ssql2014/verilator-mcp",
+        installCommand: "git clone https://github.com/ssql2014/verilator-mcp.git && cd verilator-mcp && npm install && npm run build",
+        config: {
+            "verilator": {
+                "command": "node",
+                "args": ["/path/to/verilator-mcp/dist/index.js"],
+                "env": {
+                    "VERILATOR_PATH": "/usr/local/bin/verilator",
+                    "LOG_LEVEL": "info"
+                }
+            }
+        },
+        features: [
+            "Automatic testbench generation with intelligent test scenarios",
+            "Smart simulation with dependency management and optimization",
+            "Natural language queries about simulation results and debugging",
+            "Waveform analysis and visualization support",
+            "Code coverage collection and analysis",
+            "Protocol-aware testing templates (AXI, APB, etc.)",
+            "AI-powered hardware design understanding and debugging assistance"
+        ],
+        dateAdded: "2025-01-24"
     }
 ];
 
