@@ -86,7 +86,7 @@
 
         serversGrid.innerHTML = sorted
             .map(server => `
-                <div class="server-card" data-server-id="${server.id}">
+                <div class="server-card fade-in-up" data-server-id="${server.id}">
                     <div class="server-header">
                         <div>
                             <h4 class="server-title">${server.name}</h4>
