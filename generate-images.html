@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Social Media Images</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+        }
+        .image-container {
+            margin: 20px 0;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .instructions {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        iframe {
+            border: 1px solid #ddd;
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Social Media Images for MCP-EDA Hub</h1>
+        
+        <div class="instructions">
+            <h2>Instructions:</h2>
+            <ol>
+                <li>Open this HTML file in your browser</li>
+                <li>Right-click on each image below and save as:</li>
+                <ul>
+                    <li>First image: Save as "share-banner.png" (1200x630)</li>
+                    <li>Second image: Save as "wechat-share.jpg" (500x500)</li>
+                </ul>
+                <li>Upload these images to your server in the /images/ directory</li>
+                <li>Or use a service like Cloudinary, Imgur, or GitHub Pages to host the images</li>
+            </ol>
+        </div>
+
+        <div class="image-container">
+            <h2>1. Open Graph Banner (1200x630) - Save as PNG</h2>
+            <p>Right-click and "Save image as..." → share-banner.png</p>
+            <iframe src="images/share-banner.svg" width="1200" height="630"></iframe>
+        </div>
+
+        <div class="image-container">
+            <h2>2. WeChat Share Image (500x500) - Save as JPG</h2>
+            <p>Right-click and "Save image as..." → wechat-share.jpg</p>
+            <iframe src="images/wechat-share.svg" width="500" height="500"></iframe>
+        </div>
+
+        <div class="instructions">
+            <h2>Alternative: Use Placeholder Images</h2>
+            <p>If you need immediate results, you can temporarily use these placeholder services:</p>
+            <ul>
+                <li>Banner: https://via.placeholder.com/1200x630/0066cc/ffffff?text=MCP-EDA+Hub</li>
+                <li>WeChat: https://via.placeholder.com/500x500/0066cc/ffffff?text=MCP-EDA+Hub</li>
+            </ul>
+        </div>
+
+        <div class="instructions">
+            <h2>Alternative: Use GitHub as CDN</h2>
+            <p>After converting images, you can host them on GitHub:</p>
+            <ol>
+                <li>Convert SVG to PNG/JPG using online tools like:
+                    <ul>
+                        <li><a href="https://cloudconvert.com/svg-to-png" target="_blank">CloudConvert</a></li>
+                        <li><a href="https://convertio.co/svg-png/" target="_blank">Convertio</a></li>
+                        <li><a href="https://svgtopng.com/" target="_blank">SVG to PNG</a></li>
+                    </ul>
+                </li>
+                <li>Upload converted images to your GitHub repository</li>
+                <li>Use raw GitHub URLs in your meta tags:
+                    <ul>
+                        <li>https://raw.githubusercontent.com/ssql2014/mcp-eda-hub/main/images/share-banner.png</li>
+                        <li>https://raw.githubusercontent.com/ssql2014/mcp-eda-hub/main/images/wechat-share.jpg</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
