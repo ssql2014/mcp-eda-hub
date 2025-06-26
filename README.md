@@ -88,7 +88,10 @@ mcp-eda-hub/
 │   └── style.css      # Styles
 ├── js/
 │   ├── data.js        # MCP servers data
-│   └── main.js        # Application logic
+│   ├── store.js       # State management
+│   ├── ui.js          # UI manipulation
+│   ├── events.js      # Event listeners
+│   └── app.js         # Application entry point
 ├── _config.yml        # GitHub Pages config
 └── README.md          # This file
 ```

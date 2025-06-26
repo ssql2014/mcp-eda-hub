@@ -159,14 +159,67 @@
         </div>
     </section>
 
-    <!-- Server Detail Modal -->
-    <div class="modal" id="serverModal">
+    <!-- Templates -->
+    <template id="serverCardTemplate">
+        <div class="server-card fade-in-up" data-server-id="">
+            <div class="server-header">
+                <div>
+                    <h4 class="server-title"></h4>
+                    <p class="server-author"></p>
+                </div>
+                <span class="server-category"></span>
+            </div>
+            <p class="server-description"></p>
+            <div class="server-tags"></div>
+        </div>
+    </template>
+
+    <template id="serverModalTemplate">
         <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
+            <button class="modal-close">&times;</button>
             <div id="modalBody">
-                <!-- Modal content will be dynamically inserted here -->
+                <h2></h2>
+                <p class="server-author"></p>
+                
+                <div style="margin: 2rem 0;">
+                    <span class="server-category"></span>
+                    <span style="margin-left: 1rem; color: var(--text-secondary);"></span>
+                </div>
+
+                <h3>Description</h3>
+                <p class="server-description"></p>
+
+                <h3>Features</h3>
+                <ul></ul>
+
+                <h3>Installation</h3>
+                <div class="code-block">
+                    <button class="copy-button">Copy</button>
+                    <pre><code></code></pre>
+                </div>
+
+                <h3>Claude Desktop Configuration</h3>
+                <p>Add this to your Claude Desktop config file:</p>
+                <div class="code-block">
+                    <button class="copy-button">Copy</button>
+                    <pre><code></code></pre>
+                </div>
+
+                <h3>Links</h3>
+                <p>
+                    <a href="" target="_blank" class="btn btn-primary">
+                        View on GitHub
+                    </a>
+                </p>
+
+                <h3>Tags</h3>
+                <div class="server-tags"></div>
             </div>
         </div>
+    </template>
+
+    <!-- Server Detail Modal -->
+    <div class="modal" id="serverModal">
     </div>
 
     <!-- About Section -->
@@ -201,6 +254,9 @@
 
     <!-- Scripts -->
     <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
