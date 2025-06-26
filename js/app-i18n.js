@@ -13,6 +13,9 @@
     };
     
     function init() {
+        // Initialize UI elements first
+        ui.initElements();
+        
         // Initialize language switcher
         const nav = document.querySelector('nav');
         if (nav) {

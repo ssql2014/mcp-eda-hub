@@ -1,18 +1,23 @@
 // UI module with internationalization support
 window.ui = {
-    elements: {
-        searchInput: document.getElementById('searchInput'),
-        categoriesContainer: document.getElementById('categoriesContainer'),
-        serversGrid: document.getElementById('serversGrid'),
-        noResults: document.getElementById('noResults'),
-        serverModal: document.getElementById('serverModal'),
-        serverCount: document.getElementById('serverCount'),
-        categoryCount: document.getElementById('categoryCount'),
-        contributorCount: document.getElementById('contributorCount'),
-        serverCardTemplate: document.getElementById('serverCardTemplate'),
-        serverModalTemplate: document.getElementById('serverModalTemplate'),
-        clearFilters: document.getElementById('clearFilters'),
-        sortSelect: document.getElementById('sortSelect'),
+    elements: {},
+    
+    // Initialize elements after DOM is ready
+    initElements() {
+        this.elements = {
+            searchInput: document.getElementById('searchInput'),
+            categoriesContainer: document.getElementById('categoriesContainer'),
+            serversGrid: document.getElementById('serversGrid'),
+            noResults: document.getElementById('noResults'),
+            serverModal: document.getElementById('serverModal'),
+            serverCount: document.getElementById('serverCount'),
+            categoryCount: document.getElementById('categoryCount'),
+            contributorCount: document.getElementById('contributorCount'),
+            serverCardTemplate: document.getElementById('serverCardTemplate'),
+            serverModalTemplate: document.getElementById('serverModalTemplate'),
+            clearFilters: document.getElementById('clearFilters'),
+            sortSelect: document.getElementById('sortSelect'),
+        };
     },
 
     // Update all text content based on current language
