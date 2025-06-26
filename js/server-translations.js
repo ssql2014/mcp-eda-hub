@@ -5,6 +5,7 @@ const serverTranslations = {
     descriptions: {
       "anysilicon-die-calculator": "通过网页抓取 AnySilicon 在线计算器来计算每片晶圆的芯片数量。通过 MCP 接口使用最新的 AnySilicon 计算逻辑提供精确计算。",
       "verible-mcp": "通过 Verible 提供的综合 SystemVerilog/Verilog 工具套件。通过单一 MCP 接口提供代码检查、格式化、语法分析、寄存器分析、项目分析等功能。",
+      "semiconductor-supply-chain": "半导体供应链智能代理。为 IP 核和 ASIC 服务采购提供结构化访问，帮助查找供应商、比较服务和获取价格估算。",
       "yosys-mcp": "通过 MCP 访问 Yosys 开源综合框架。支持 Verilog RTL 综合、优化、技术映射和形式验证。",
       "verilator-mcp": "最快的 Verilog/SystemVerilog 仿真器的 MCP 集成。支持仿真编译、代码检查、波形生成和覆盖率分析。",
       "kicad-cli-mcp": "适用于 Claude 等 AI 助手的 KiCAD EDA 套件集成。通过 MCP 支持 PCB 设计、原理图编辑和制造文件生成。"
@@ -27,6 +28,15 @@ const serverTranslations = {
         "语法感知的文件比较和代码混淆",
         "所有工具的自然语言接口",
         "改进性能的智能缓存"
+      ],
+      "semiconductor-supply-chain": [
+        "搜索和发现 IP 核和 ASIC 服务提供商",
+        "比较不同供应商的服务和能力",
+        "获取定制 IP 核和 ASIC 服务的价格估算",
+        "访问详细的供应商信息和联系方式",
+        "支持 Design House Partner 网络和 ASIC 设计公司",
+        "提供结构化的供应商数据和比较",
+        "通过自然语言查询简化采购流程"
       ],
       "yosys-mcp": [
         "RTL 综合和优化",
