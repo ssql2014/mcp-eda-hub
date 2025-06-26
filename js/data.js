@@ -199,6 +199,39 @@ const mcpServers = [
             "Intelligent caching for improved performance"
         ],
         dateAdded: "2025-01-26"
+    },
+    {
+        id: "openlane-mcp",
+        name: "OpenLane MCP Server",
+        author: "mcp4eda",
+        category: "Physical Design",
+        description: "Complete RTL to GDSII flow automation with Container Desktop support. Provides synthesis, floorplanning, placement, CTS, routing, and GDSII generation through OpenLane.",
+        tags: ["openlane", "rtl-to-gdsii", "synthesis", "placement", "routing", "cts", "physical-design", "asic", "docker", "container"],
+        githubUrl: "https://github.com/ssql2014/mcp4eda/tree/main/openlane-mcp",
+        installCommand: "git clone https://github.com/ssql2014/mcp4eda.git && cd mcp4eda/openlane-mcp && npm install && npm run build",
+        config: {
+            "openlane": {
+                "command": "node",
+                "args": ["/path/to/mcp4eda/openlane-mcp/dist/index.js"],
+                "env": {
+                    "CONTAINER_EXECUTABLE": "docker",
+                    "OPENLANE_IMAGE": "efabless/openlane:latest",
+                    "WORK_DIR": "/home/user/openlane-workspace",
+                    "LOG_LEVEL": "info"
+                }
+            }
+        },
+        features: [
+            "Complete RTL to GDSII flow with single command",
+            "Individual stage control for synthesis, floorplan, placement, CTS, routing",
+            "Container-based execution supporting Docker, Podman, and Container Desktop",
+            "Multi-PDK support including SkyWater, GF, and custom PDKs",
+            "Natural language interface for complex flow operations",
+            "Design configuration validation and checking",
+            "Comprehensive flow reports and statistics generation",
+            "Resource library with flow documentation and best practices"
+        ],
+        dateAdded: "2025-01-26"
     }
 ];
 
