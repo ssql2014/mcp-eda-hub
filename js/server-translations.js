@@ -10,6 +10,7 @@ const serverTranslations = {
       "verilator-mcp": "最快的 Verilog/SystemVerilog 仿真器的 MCP 集成。支持仿真编译、代码检查、波形生成和覆盖率分析。",
       "gtkwave-mcp": "对 GTKWave 波形查看和分析功能的程序化访问，用于自动化 EDA 工作流程。支持多种格式和时序分析。",
       "klayout-mcp": "功能全面的 IC 版图查看和编辑器，具备 DRC、LVS 和脚本功能。支持多种格式，包括 GDS、OASIS、DXF 等。",
+      "openlane-mcp": "完整的 RTL 到 GDSII 流程自动化，支持容器桌面。通过 OpenLane 提供综合、布局规划、布局、时钟树综合、布线和 GDSII 生成。",
       "kicad-cli-mcp": "适用于 Claude 等 AI 助手的 KiCAD EDA 套件集成。通过 MCP 支持 PCB 设计、原理图编辑和制造文件生成。"
     },
     // Feature translations
@@ -73,6 +74,16 @@ const serverTranslations = {
         "自然语言接口，实现直观的版图操作",
         "丰富的资源库，包含 DRC 模板和分析脚本",
         "智能缓存，提升性能表现"
+      ],
+      "openlane-mcp": [
+        "单命令完成完整的 RTL 到 GDSII 流程",
+        "独立阶段控制：综合、布局规划、布局、时钟树综合、布线",
+        "基于容器的执行，支持 Docker、Podman 和容器桌面",
+        "多 PDK 支持，包括 SkyWater、GF 和自定义 PDK",
+        "复杂流程操作的自然语言接口",
+        "设计配置验证和检查",
+        "综合流程报告和统计信息生成",
+        "包含流程文档和最佳实践的资源库"
       ],
       "kicad-cli-mcp": [
         "PCB 布局和布线",
