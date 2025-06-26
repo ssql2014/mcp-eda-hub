@@ -168,6 +168,37 @@ const mcpServers = [
             "Support for GTKWave save files (.gtkw)"
         ],
         dateAdded: "2025-01-26"
+    },
+    {
+        id: "klayout-mcp",
+        name: "KLayout MCP Server",
+        author: "mcp4eda",
+        category: "Physical Design",
+        description: "Comprehensive IC layout viewer and editor with DRC, LVS, and scripting capabilities. Supports multiple formats including GDS, OASIS, DXF, and more.",
+        tags: ["klayout", "layout", "gds", "oasis", "drc", "lvs", "physical-design", "ic-design"],
+        githubUrl: "https://github.com/ssql2014/mcp4eda/tree/main/klayout-mcp",
+        installCommand: "git clone https://github.com/ssql2014/mcp4eda.git && cd mcp4eda/klayout-mcp && npm install && npm run build",
+        config: {
+            "klayout": {
+                "command": "node",
+                "args": ["/path/to/mcp4eda/klayout-mcp/dist/index.js"],
+                "env": {
+                    "KLAYOUT_PATH": "/usr/local/bin/klayout",
+                    "LOG_LEVEL": "info"
+                }
+            }
+        },
+        features: [
+            "Analyze layout files with cell hierarchy and layer information",
+            "Convert between GDS, OASIS, DXF, CIF, MAG, DEF/LEF formats",
+            "Execute design rule checks with KLayout's powerful DRC engine",
+            "Extract specific layers with shape merging and hierarchy flattening",
+            "Run custom Python/Ruby scripts with full KLayout API access",
+            "Natural language interface for intuitive layout operations",
+            "Rich resource library with DRC templates and analysis scripts",
+            "Intelligent caching for improved performance"
+        ],
+        dateAdded: "2025-01-26"
     }
 ];
 
