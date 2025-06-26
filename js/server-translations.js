@@ -8,6 +8,7 @@ const serverTranslations = {
       "semiconductor-supply-chain": "半导体供应链智能代理。为 IP 核和 ASIC 服务采购提供结构化访问，帮助查找供应商、比较服务和获取价格估算。",
       "yosys-mcp": "通过 MCP 访问 Yosys 开源综合框架。支持 Verilog RTL 综合、优化、技术映射和形式验证。",
       "verilator-mcp": "最快的 Verilog/SystemVerilog 仿真器的 MCP 集成。支持仿真编译、代码检查、波形生成和覆盖率分析。",
+      "gtkwave-mcp": "对 GTKWave 波形查看和分析功能的程序化访问，用于自动化 EDA 工作流程。支持多种格式和时序分析。",
       "kicad-cli-mcp": "适用于 Claude 等 AI 助手的 KiCAD EDA 套件集成。通过 MCP 支持 PCB 设计、原理图编辑和制造文件生成。"
     },
     // Feature translations
@@ -51,6 +52,16 @@ const serverTranslations = {
         "VCD 波形生成和分析",
         "代码覆盖率报告",
         "多线程仿真支持"
+      ],
+      "gtkwave-mcp": [
+        "打开并显示多种波形格式 (VCD, FST, LXT2)",
+        "在波形格式之间转换，支持压缩",
+        "使用模式匹配提取信号层次",
+        "执行时序测量和分析",
+        "生成用于自动化工作流的 TCL 脚本",
+        "捕获高质量的波形截图",
+        "支持后台模式操作，便于 CI/CD 集成",
+        "支持 GTKWave 保存文件 (.gtkw)"
       ],
       "kicad-cli-mcp": [
         "PCB 布局和布线",

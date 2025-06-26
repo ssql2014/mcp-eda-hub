@@ -28,6 +28,7 @@ const translations = {
       names: {
         'design-entry': 'Design Entry',
         'simulation': 'Simulation',
+        'simulation-visualization': 'Simulation Visualization',
         'synthesis': 'Synthesis',
         'place-route': 'Place & Route',
         'verification': 'Verification',
@@ -93,6 +94,7 @@ const translations = {
       names: {
         'design-entry': '设计输入',
         'simulation': '仿真',
+        'simulation-visualization': '仿真可视化',
         'synthesis': '综合',
         'place-route': '布局布线',
         'verification': '验证',

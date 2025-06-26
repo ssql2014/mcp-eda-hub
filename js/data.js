@@ -137,6 +137,37 @@ const mcpServers = [
             "AI-powered hardware design understanding and debugging assistance"
         ],
         dateAdded: "2025-01-24"
+    },
+    {
+        id: "gtkwave-mcp",
+        name: "GTKWave MCP Server",
+        author: "mcp4eda",
+        category: "Simulation Visualization",
+        description: "Programmatic access to GTKWave's waveform viewing and analysis capabilities for automated EDA workflows. Supports multiple formats and timing analysis.",
+        tags: ["gtkwave", "waveform", "vcd", "fst", "simulation", "visualization", "timing", "analysis"],
+        githubUrl: "https://github.com/ssql2014/mcp4eda/tree/main/gtkwave-mcp",
+        installCommand: "git clone https://github.com/ssql2014/mcp4eda.git && cd mcp4eda/gtkwave-mcp && npm install && npm run build",
+        config: {
+            "gtkwave": {
+                "command": "node",
+                "args": ["/path/to/mcp4eda/gtkwave-mcp/dist/index.js"],
+                "env": {
+                    "GTKWAVE_PATH": "/usr/local/bin/gtkwave",
+                    "LOG_LEVEL": "info"
+                }
+            }
+        },
+        features: [
+            "Open and display multiple waveform formats (VCD, FST, LXT2)",
+            "Convert between waveform formats with compression support",
+            "Extract signal hierarchies with pattern matching",
+            "Perform timing measurements and analysis",
+            "Generate TCL scripts for automated workflows",
+            "Capture high-quality waveform screenshots",
+            "Background mode operation for CI/CD integration",
+            "Support for GTKWave save files (.gtkw)"
+        ],
+        dateAdded: "2025-01-26"
     }
 ];
 
@@ -144,6 +175,7 @@ const mcpServers = [
 const categories = [
     { id: "design-entry", name: "Design Entry", count: 0 },
     { id: "simulation", name: "Simulation", count: 0 },
+    { id: "simulation-visualization", name: "Simulation Visualization", count: 0 },
     { id: "synthesis", name: "Synthesis", count: 0 },
     { id: "physical-design", name: "Physical Design", count: 0 },
     { id: "timing-analysis", name: "Timing Analysis", count: 0 },
