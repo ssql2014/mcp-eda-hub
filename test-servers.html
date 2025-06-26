@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Servers Display</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .server { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Test MCP-EDA Servers Display</h1>
+    
+    <div id="status"></div>
+    <div id="servers"></div>
+    
+    <script src="js/translations.js"></script>
+    <script src="js/server-translations.js"></script>
+    <script src="js/data.js"></script>
+    
+    <script>
+        const status = document.getElementById('status');
+        const serversDiv = document.getElementById('servers');
+        
+        function log(msg, type = '') {
+            const p = document.createElement('p');
+            p.className = type;
+            p.textContent = msg;
+            status.appendChild(p);
+        }
+        
+        // Test 1: Check if data is loaded
+        if (window.mcpServersData) {
+            log('✓ mcpServersData is available', 'success');
+            log(`  - Number of servers: ${window.mcpServersData.servers.length}`, 'success');
+            log(`  - Number of categories: ${window.mcpServersData.categories.length}`, 'success');
+            
+            // Display servers
+            window.mcpServersData.servers.forEach(server => {
+                const div = document.createElement('div');
+                div.className = 'server';
+                div.innerHTML = `
+                    <h3>${server.name}</h3>
+                    <p><strong>Author:</strong> ${server.author}</p>
+                    <p><strong>Category:</strong> ${server.category}</p>
+                    <p><strong>Description:</strong> ${server.description}</p>
+                    <p><strong>Tags:</strong> ${server.tags.join(', ')}</p>
+                `;
+                serversDiv.appendChild(div);
+            });
+        } else {
+            log('✗ mcpServersData is NOT available', 'error');
+        }
+        
+        // Test 2: Check if langManager is available
+        if (window.langManager) {
+            log('✓ langManager is available', 'success');
+            log(`  - Current language: ${window.langManager.getCurrentLang()}`, 'success');
+        } else {
+            log('✗ langManager is NOT available', 'error');
+        }
+    </script>
+</body>
+</html>

@@ -194,5 +194,6 @@ class LanguageManager {
 // Create global instance
 window.langManager = new LanguageManager();
 
-// Export for ES6 modules
-export { LanguageManager, translations };
+// Make available globally
+window.LanguageManager = LanguageManager;
+window.translations = translations;

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Error Test</title>
+</head>
+<body>
+    <h1>Error Test</h1>
+    <div id="log"></div>
+    
+    <script>
+        const log = document.getElementById('log');
+        function addLog(msg) {
+            log.innerHTML += '<p>' + msg + '</p>';
+        }
+        
+        window.addEventListener('error', function(e) {
+            addLog('ERROR: ' + e.message + ' at ' + e.filename + ':' + e.lineno);
+        });
+        
+        addLog('Starting to load scripts...');
+    </script>
+    
+    <script src="js/translations.js" onload="addLog('translations.js loaded')" onerror="addLog('ERROR loading translations.js')"></script>
+    <script src="js/server-translations.js" onload="addLog('server-translations.js loaded')" onerror="addLog('ERROR loading server-translations.js')"></script>
+    <script src="js/data.js" onload="addLog('data.js loaded')" onerror="addLog('ERROR loading data.js')"></script>
+    <script src="js/github.js" onload="addLog('github.js loaded')" onerror="addLog('ERROR loading github.js')"></script>
+    <script src="js/store.js" onload="addLog('store.js loaded')" onerror="addLog('ERROR loading store.js')"></script>
+    <script src="js/ui-i18n.js" onload="addLog('ui-i18n.js loaded')" onerror="addLog('ERROR loading ui-i18n.js')"></script>
+    <script src="js/events.js" onload="addLog('events.js loaded')" onerror="addLog('ERROR loading events.js')"></script>
+    <script src="js/app-i18n.js" onload="addLog('app-i18n.js loaded')" onerror="addLog('ERROR loading app-i18n.js')"></script>
+    
+    <script>
+        setTimeout(function() {
+            addLog('--- Checking loaded objects ---');
+            addLog('window.langManager: ' + (typeof window.langManager));
+            addLog('window.mcpServersData: ' + (typeof window.mcpServersData));
+            addLog('window.store: ' + (typeof window.store));
+            addLog('window.ui: ' + (typeof window.ui));
+            
+            if (window.mcpServersData) {
+                addLog('Servers count: ' + window.mcpServersData.servers.length);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

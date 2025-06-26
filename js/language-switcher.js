@@ -1,5 +1,5 @@
 // Language Switcher Component
-export function createLanguageSwitcher() {
+window.createLanguageSwitcher = function() {
   const switcher = document.createElement('div');
   switcher.className = 'language-switcher';
   switcher.innerHTML = `
@@ -36,7 +36,7 @@ export function createLanguageSwitcher() {
 }
 
 // Insert language switcher into the page
-export function initLanguageSwitcher() {
+window.initLanguageSwitcher = function() {
   const nav = document.querySelector('nav');
   if (nav) {
     const switcher = createLanguageSwitcher();
