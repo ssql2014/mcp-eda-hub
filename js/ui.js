@@ -49,8 +49,39 @@ window.ui = {
             card.querySelector('.server-category').textContent = server.category;
             card.querySelector('.server-description').textContent = server.description;
             card.querySelector('.server-tags').innerHTML = server.tags.map(tag => `<span class="server-tag">${tag}</span>`).join('');
+            
+            // Store GitHub URL in the star count element for later fetching
+            const starElement = card.querySelector('.server-stars');
+            if (starElement && server.githubUrl) {
+                starElement.dataset.githubUrl = server.githubUrl;
+            }
+            
             this.elements.serversGrid.appendChild(card);
         });
+        
+        // Fetch star counts after rendering
+        this.fetchStarCounts();
+    },
+    
+    async fetchStarCounts() {
+        const starElements = document.querySelectorAll('.server-stars[data-github-url]');
+        
+        for (const element of starElements) {
+            const githubUrl = element.dataset.githubUrl;
+            if (githubUrl) {
+                try {
+                    const starCount = await window.github.getStarCount(githubUrl);
+                    if (starCount !== null) {
+                        const countElement = element.querySelector('.star-count');
+                        if (countElement) {
+                            countElement.textContent = window.github.formatStarCount(starCount);
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error fetching star count:', error);
+                }
+            }
+        }
     },
 
     showServerModal(server) {
@@ -75,6 +106,26 @@ window.ui = {
         this.elements.serverModal.innerHTML = '';
         this.elements.serverModal.appendChild(modal);
         this.elements.serverModal.classList.add('active');
+        
+        // Fetch and display star count for modal
+        if (server.githubUrl && window.github) {
+            window.github.getStarCount(server.githubUrl).then(starCount => {
+                if (starCount !== null) {
+                    const titleElement = this.elements.serverModal.querySelector('h2');
+                    if (titleElement && !titleElement.querySelector('.modal-stars')) {
+                        const starSpan = document.createElement('span');
+                        starSpan.className = 'modal-stars';
+                        starSpan.innerHTML = `
+                            <svg class="star-icon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                                <path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+                            </svg>
+                            ${window.github.formatStarCount(starCount)}
+                        `;
+                        titleElement.appendChild(starSpan);
+                    }
+                }
+            });
+        }
     },
 
     hideServerModal() {

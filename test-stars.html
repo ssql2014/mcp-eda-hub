@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test GitHub Stars</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .test-item {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .status {
+            font-weight: bold;
+        }
+        .success { color: green; }
+        .error { color: red; }
+        .pending { color: orange; }
+    </style>
+</head>
+<body>
+    <h1>GitHub Stars API Test</h1>
+    <div id="test-results"></div>
+
+    <script src="js/github.js"></script>
+    <script>
+        async function runTests() {
+            const testUrls = [
+                'https://github.com/ssql2014/mcp4eda/tree/main/anysilicon',
+                'https://github.com/ssql2014/mcp4eda/tree/main/verible-mcp',
+                'https://github.com/ssql2014/mcp4eda'
+            ];
+            
+            const resultsDiv = document.getElementById('test-results');
+            
+            for (const url of testUrls) {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'test-item';
+                itemDiv.innerHTML = `
+                    <h3>Testing: ${url}</h3>
+                    <p class="status pending">Status: Fetching...</p>
+                    <p class="stars">Stars: -</p>
+                    <p class="parsed">Parsed: -</p>
+                `;
+                resultsDiv.appendChild(itemDiv);
+                
+                const statusEl = itemDiv.querySelector('.status');
+                const starsEl = itemDiv.querySelector('.stars');
+                const parsedEl = itemDiv.querySelector('.parsed');
+                
+                try {
+                    // Test parsing
+                    const parsed = window.github.parseGithubUrl(url);
+                    parsedEl.textContent = `Parsed: owner=${parsed?.owner}, repo=${parsed?.repo}`;
+                    
+                    // Test fetching
+                    const starCount = await window.github.getStarCount(url);
+                    
+                    if (starCount !== null) {
+                        statusEl.textContent = 'Status: Success';
+                        statusEl.className = 'status success';
+                        starsEl.textContent = `Stars: ${starCount} (formatted: ${window.github.formatStarCount(starCount)})`;
+                    } else {
+                        statusEl.textContent = 'Status: Failed to fetch';
+                        statusEl.className = 'status error';
+                    }
+                } catch (error) {
+                    statusEl.textContent = `Status: Error - ${error.message}`;
+                    statusEl.className = 'status error';
+                }
+            }
+            
+            // Test cache
+            const cacheDiv = document.createElement('div');
+            cacheDiv.className = 'test-item';
+            cacheDiv.innerHTML = '<h3>Cache Test</h3><p>Fetching same URL again (should be from cache)...</p>';
+            resultsDiv.appendChild(cacheDiv);
+            
+            const start = Date.now();
+            await window.github.getStarCount(testUrls[0]);
+            const duration = Date.now() - start;
+            cacheDiv.innerHTML += `<p class="status success">Cache test completed in ${duration}ms (should be < 10ms if cached)</p>`;
+        }
+        
+        runTests();
+    </script>
+</body>
+</html>

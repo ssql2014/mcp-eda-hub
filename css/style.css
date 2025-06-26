@@ -441,6 +441,12 @@ code, pre {
     margin-bottom: 1rem;
 }
 
+.server-header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
 .server-title {
     font-size: 1.25rem;
     font-weight: 600;
@@ -472,6 +478,29 @@ code, pre {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+}
+
+.server-stars {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    background-color: var(--bg-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+}
+
+.star-icon {
+    width: 14px;
+    height: 14px;
+    color: #f59e0b;
+}
+
+.star-count {
+    font-weight: 500;
+    color: var(--text-primary);
 }
 
 .server-tag {
@@ -511,6 +540,22 @@ code, pre {
     overflow-y: auto;
     position: relative;
     box-shadow: var(--shadow-lg);
+}
+
+.modal-content h2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modal-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--text-secondary);
+    margin-left: auto;
 }
 
 .modal-close {
