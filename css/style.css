@@ -173,6 +173,32 @@ code, pre {
     color: var(--text-primary);
 }
 
+/* Auth Links Styling */
+.nav-links a[href*="login"],
+.nav-links a[href*="register"] {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.nav-links a[href*="login"]:hover,
+.nav-links a[href*="register"]:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.nav-links a[href*="register"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.nav-links a[href*="register"]:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
 .github-link svg {
     width: 24px;
     height: 24px;
