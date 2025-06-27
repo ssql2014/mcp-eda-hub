@@ -95,10 +95,13 @@ window.ui = {
         const t = window.langManager.t.bind(window.langManager);
         this.elements.categoriesContainer.innerHTML = categories
             .map(category => {
-                const translatedName = t(`categories.names.${category.id}`) || category.name;
+                const translationKey = `categories.names.${category.id}`;
+                const translatedName = t(translationKey);
+                // Use original name if translation returns the key itself (not found)
+                const displayName = translatedName === translationKey ? category.name : translatedName;
                 return `
                     <button class="category-tag" data-category="${category.id}">
-                        ${translatedName} (${category.count})
+                        ${displayName} (${category.count})
                     </button>
                 `;
             })
@@ -123,8 +126,12 @@ window.ui = {
             card.querySelector('.server-title').textContent = server.name;
             card.querySelector('.server-author').textContent = `${t('server.by')} ${server.author}`;
             
-            const categoryTranslated = t(`categories.names.${server.category}`) || server.category;
-            card.querySelector('.server-category').textContent = categoryTranslated;
+            const categoryId = server.category.toLowerCase().replace(/[\s\/]/g, '-');
+            const categoryKey = `categories.names.${categoryId}`;
+            const categoryTranslated = t(categoryKey);
+            // Use original category if translation returns the key itself (not found)
+            const categoryDisplay = categoryTranslated === categoryKey ? server.category : categoryTranslated;
+            card.querySelector('.server-category').textContent = categoryDisplay;
             
             // Use translated description if available
             const currentLang = window.langManager.getCurrentLang();
@@ -172,8 +179,12 @@ window.ui = {
         modal.querySelector('h2').textContent = server.name;
         modal.querySelector('.server-author').textContent = `Created by ${server.author}`;
         
-        const categoryTranslated = t(`categories.names.${server.category}`) || server.category;
-        modal.querySelector('.server-category').textContent = categoryTranslated;
+        const modalCategoryId = server.category.toLowerCase().replace(/[\s\/]/g, '-');
+        const modalCategoryKey = `categories.names.${modalCategoryId}`;
+        const modalCategoryTranslated = t(modalCategoryKey);
+        // Use original category if translation returns the key itself (not found)
+        const modalCategoryDisplay = modalCategoryTranslated === modalCategoryKey ? server.category : modalCategoryTranslated;
+        modal.querySelector('.server-category').textContent = modalCategoryDisplay;
         
         // Use translated description and features if available
         const currentLang = window.langManager.getCurrentLang();
