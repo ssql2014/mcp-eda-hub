@@ -160,7 +160,7 @@ const categories = [
     { id: "design-entry", name: "Design Entry", count: 0 },
     { id: "simulation", name: "Simulation", count: 0 },
     { id: "synthesis", name: "Synthesis", count: 0 },
-    { id: "physical-design", name: "物理设计", count: 0 },
+    { id: "physical-design", name: "Physical Design", count: 0 },
     { id: "timing-analysis", name: "Timing Analysis", count: 0 },
     { id: "power-analysis", name: "Power Analysis", count: 0 },
     { id: "verification", name: "Verification", count: 0 },
