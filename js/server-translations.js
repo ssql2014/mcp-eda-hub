@@ -11,6 +11,7 @@ const serverTranslations = {
       "gtkwave-mcp": "对 GTKWave 波形查看和分析功能的程序化访问，用于自动化 EDA 工作流程。支持多种格式和时序分析。",
       "klayout-mcp": "功能全面的 IC 版图查看和编辑器，具备 DRC、LVS 和脚本功能。支持多种格式，包括 GDS、OASIS、DXF 等。",
       "openlane-mcp": "完整的 RTL 到 GDSII 流程自动化，支持容器桌面。通过 OpenLane 提供综合、布局规划、布局、时钟树综合、布线和 GDSII 生成。",
+      "arcas-onlineeda-mcp": "基于Web的EDA平台接口，通过Arcas OnlineEDA提供形式化验证、等价性检查、功耗分析、安全验证和FPGA设计。",
       "kicad-cli-mcp": "适用于 Claude 等 AI 助手的 KiCAD EDA 套件集成。通过 MCP 支持 PCB 设计、原理图编辑和制造文件生成。"
     },
     // Feature translations
@@ -84,6 +85,16 @@ const serverTranslations = {
         "设计配置验证和检查",
         "综合流程报告和统计信息生成",
         "包含流程文档和最佳实践的资源库"
+      ],
+      "arcas-onlineeda-mcp": [
+        "形式化验证，支持属性检查和断言验证",
+        "RTL和门级设计之间的等价性检查",
+        "动态和静态功耗优化分析",
+        "安全验证，检测漏洞和侧信道攻击",
+        "针对Xilinx和Intel/Altera设计的FPGA专用验证",
+        "自然语言界面，提供15+示例查询",
+        "使用Puppeteer进行Web自动化，实现无缝平台交互",
+        "通过MCP URI访问项目和结果资源"
       ],
       "kicad-cli-mcp": [
         "PCB 布局和布线",

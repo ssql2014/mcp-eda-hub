@@ -232,6 +232,39 @@ const mcpServers = [
             "Resource library with flow documentation and best practices"
         ],
         dateAdded: "2025-01-26"
+    },
+    {
+        id: "arcas-onlineeda-mcp",
+        name: "Arcas OnlineEDA MCP Server",
+        author: "mcp4eda",
+        category: "Verification",
+        description: "Web-based EDA platform interface for formal verification, equivalence checking, power analysis, security verification, and FPGA design through Arcas OnlineEDA.",
+        tags: ["arcas", "onlineeda", "formal-verification", "equivalence", "power-analysis", "security", "fpga", "web-based", "cloud-eda"],
+        githubUrl: "https://github.com/ssql2014/arcas-onlineeda-mcp",
+        installCommand: "git clone https://github.com/ssql2014/arcas-onlineeda-mcp.git && cd arcas-onlineeda-mcp && npm install && npm run build",
+        config: {
+            "arcas-onlineeda": {
+                "command": "node",
+                "args": ["/path/to/arcas-onlineeda-mcp/dist/index.js"],
+                "env": {
+                    "ONLINEEDA_USERNAME": "your_username",
+                    "ONLINEEDA_PASSWORD": "your_password",
+                    "ONLINEEDA_HEADLESS": "true",
+                    "LOG_LEVEL": "info"
+                }
+            }
+        },
+        features: [
+            "Formal verification with property checking and assertion validation",
+            "Equivalence checking between RTL and gate-level designs",
+            "Power analysis for dynamic and static consumption optimization",
+            "Security verification to detect vulnerabilities and side-channels",
+            "FPGA-specific verification for Xilinx and Intel/Altera designs",
+            "Natural language interface with 15+ example queries",
+            "Web automation using Puppeteer for seamless platform interaction",
+            "Resource access through MCP URIs for projects and results"
+        ],
+        dateAdded: "2025-07-04"
     }
 ];
 
